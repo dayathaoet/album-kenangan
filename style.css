@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #fddb92, #d1fdff);
+    color: #333;
+    overflow: hidden;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.screen.active {
+    display: flex;
+}
+
+#welcome-screen {
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+.welcome-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4em;
+    color: #e74c3c;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+#open-button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#open-button:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+#main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#main-content.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.flowers {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.song-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    color: #e74c3c;
+    margin-bottom: 15px;
+}
+
+.lyrics-container {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.lyrics {
+    white-space: pre-wrap; /* Mempertahankan format baris baru */
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Gaya untuk tombol di index.html */
+.button button {
+    padding: 15px 35px;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease; /* Transisi halus untuk semua properti */
+}
+
+.button button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.button button:hover {
+    background-color: #ff4d6d;
+    /* Efek menyala (glow) menggunakan box-shadow */
+    box-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff4d6d, 0 0 60px #ff4d6d;
+    transform: scale(1.1); /* Sedikit membesar saat didekati */
+}
