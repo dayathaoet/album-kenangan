@@ -1639,16 +1639,16 @@ body {
   }
 
   .music-player {
-    left: 50%;
-    right: auto;
+    left: auto;
+    right: 6vmin;
     bottom: 14vmin;
-    width: min(92vw, 360px);
+    width: auto;
     justify-content: center;
-    transform: translate(-50%, 3vmin) scale(0.92);
+    transform: translateY(3vmin) scale(0.92);
   }
 
   .music-player--show {
-    transform: translate(-50%, 0) scale(1);
+    transform: translateY(0) scale(1);
   }
 
   .music-player__button,
@@ -1658,7 +1658,12 @@ body {
   }
 
   .music-player__button {
-    flex: 1;
+    width: 56px;
+    height: 56px;
+    min-height: 56px;
+    flex: 0 0 56px;
+    padding: 0;
+    border-radius: 50%;
   }
 
   .music-player__upload {
@@ -1666,9 +1671,13 @@ body {
   }
 
   .music-player__icon {
-    width: 24px;
-    height: 24px;
-    font-size: 17px;
+    width: 32px;
+    height: 32px;
+    font-size: 21px;
+  }
+
+  .music-player__text {
+    display: none;
   }
 
   .album__grid {
